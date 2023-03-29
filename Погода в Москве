@@ -1,0 +1,28 @@
+import pandas as pd
+import math
+import numpy as np
+
+
+data = pd.read_excel('погода2.xlsx', sheet_name='ТоЧтоНадо')
+data_t = data['T'].tolist()
+res = []
+for i in data_t:
+    if not(math.isnan(i)) == True:
+        res.append(i)
+
+res = res[::-1]
+arr = np.array(res)
+
+print('2022 год')
+print(f"Январь. Максимальная: {np.max(arr[0:31])}, Минимальная: {np.min(arr[0:31])}, Средняя: {np.mean(arr[0:31])}, Дисперсия: {np.var(arr[0:31])}")
+print(f"Февраль. Максимальная: {np.max(arr[31:59])}, Минимальная: {np.min(arr[31:59])}, Средняя: {np.mean(arr[31:59])}, Дисперсия: {np.var(arr[31:59])}")
+print(f"Март. Максимальная: {np.max(arr[59:90])}, Минимальная: {np.min(arr[59:90])}, Средняя: {np.mean(arr[59:90])}, Дисперсия: {np.var(arr[59:90])}")
+print(f"Апрель. Максимальная: {np.max(arr[90:120])}, Минимальная: {np.min(arr[90:120])}, Средняя: {np.mean(arr[90:120])}, Дисперсия: {np.var(arr[90:120])}")
+print(f"Май. Максимальная: {np.max(arr[120:151])}, Минимальная: {np.min(arr[120:151])}, Средняя: {np.mean(arr[120:151])}, Дисперсия: {np.var(arr[120:151])}")
+print(f"Июнь. Максимальная: {np.max(arr[151:181])}, Минимальная: {np.min(arr[151:181])}, Средняя: {np.mean(arr[151:181])}, Дисперсия: {np.var(arr[151:181])}")
+print(f"Июль. Максимальная: {np.max(arr[181:212])}, Минимальная: {np.min(arr[181:212])}, Средняя: {np.mean(arr[181:212])}, Дисперсия: {np.var(arr[181:212])}")
+print(f"Август. Максимальная: {np.max(arr[212:243])}, Минимальная: {np.min(arr[212:243])}, Средняя: {np.mean(arr[212:243])}, Дисперсия: {np.var(arr[212:243])}")
+print(f"Сентябрь. Максимальная: {np.max(arr[243:273])}, Минимальная: {np.min(arr[243:273])}, Средняя: {np.mean(arr[243:273])}, Дисперсия: {np.var(arr[243:273])}")
+print(f"Октябрь. Максимальная: {np.max(arr[273:304])}, Минимальная: {np.min(arr[273:304])}, Средняя: {np.mean(arr[273:304])}, Дисперсия: {np.var(arr[273:304])}")
+print(f"Ноябрь. Максимальная: {np.max(arr[304:334])}, Минимальная: {np.min(arr[304:334])}, Средняя: {np.mean(arr[304:334])}, Дисперсия: {np.var(arr[304:334])}")
+print(f"Декабрь. Максимальная: {np.max(arr[334:365])}, Минимальная: {np.min(arr[334:365])}, Средняя: {np.mean(arr[334:365])}, Дисперсия: {np.var(arr[334:365])}")
